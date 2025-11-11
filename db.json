@@ -1,0 +1,12 @@
+{
+  "wishes": [
+    {
+      "id": 1,
+      "title": "Laptop",
+      "description": "MacBook Air",
+      "price": 1200,
+      "image": "url",
+      "date": "2025-11-11"
+    }
+  ]
+}
