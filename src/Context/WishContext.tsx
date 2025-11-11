@@ -5,7 +5,7 @@ import { API_URL } from "../Constants/Api";
 
 interface WishContextType {
   wishes: Wish[];
-  addWish: (wish: Wish) => Promise<void>;
+  addWish: (wish: Omit<Wish, "id">) => Promise<void>;
   deleteWish: (id: number) => Promise<void>;
   updateWish: (wish: Wish) => Promise<void>;
 }
@@ -26,12 +26,13 @@ export const WishProvider: React.FC<{ children: React.ReactNode }> = ({
     load();
   }, []);
 
-  const addWish = async (wish: Wish) => {
+  const addWish = async (wish: Omit<Wish, "id">) => {
     const data = await request("/wishes", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(wish),
     });
+
     if (data) setWishes((prev) => [...prev, data]);
   };
 
