@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import type { Wish } from "../Types/Wish";
 import { useWishes } from "../Context/WishContext";
+import type { Wish } from "../Types/Wish";
 
-export const WishForm: React.FC = () => {
+export const WishForm: React.FC<{ onClose?: () => void }> = ({ onClose }) => {
   const { addWish } = useWishes();
   const [form, setForm] = useState<Omit<Wish, "id">>({
     title: "",
@@ -12,6 +12,8 @@ export const WishForm: React.FC = () => {
     date: new Date().toISOString(),
   });
 
+  const [error, setError] = useState<string>("");
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: name === "price" ? Number(value) : value });
@@ -19,27 +21,63 @@ export const WishForm: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (
+      !form.title.trim() ||
+      !form.description.trim() ||
+      !form.image.trim() ||
+      form.price <= 0
+    ) {
+      setError("Please fill in all fields before adding a wish.");
+      return;
+    }
+
+    setError("");
     addWish(form);
+    setForm({
+      title: "",
+      description: "",
+      price: 0,
+      image: "",
+      date: new Date().toISOString(),
+    });
+
+    onClose?.();
   };
 
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col gap-2 max-w-md p-4 border rounded"
+      className="flex flex-col gap-2 w-full max-w-md mx-auto p-4 border rounded"
     >
-      <input name="title" placeholder="Title" onChange={handleChange} />
+      <input
+        name="title"
+        placeholder="Title"
+        onChange={handleChange}
+        className="w-full p-[5px] border-b border-gray-300 focus:outline-none focus:border-blue-500 transition duration-200"
+      />
       <input
         name="description"
         placeholder="Description"
         onChange={handleChange}
+        className="w-full p-[5px] border-b border-gray-300 focus:outline-none focus:border-blue-500 transition duration-200"
       />
       <input
         name="price"
         type="number"
         placeholder="Price"
+        min="0"
         onChange={handleChange}
+        className="w-full p-[5px] border-b border-gray-300 focus:outline-none focus:border-blue-500 transition duration-200"
       />
-      <input name="image" placeholder="Image URL" onChange={handleChange} />
+      <input
+        name="image"
+        placeholder="Image URL"
+        onChange={handleChange}
+        className="w-full p-[5px] border-b border-gray-300 focus:outline-none focus:border-blue-500 transition duration-200"
+      />
+
+      {error && <p className="text-red-500 text-sm">{error}</p>}
 
       <button
         type="submit"
