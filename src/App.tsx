@@ -1,8 +1,16 @@
+import { Dashboard } from "./Pages/Dashboard";
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import WishPage from "./Pages/WishPage";
+
 function App() {
   return (
-    <div className="bg-red-500 text-white px-3 py-1 rounded text-sm">
-      hello!!!!!!!!!!!!!!
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/wish/:id" element={<WishPage />} />
+      </Routes>
+    </Router>
   );
 }
 
