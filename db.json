@@ -3,10 +3,58 @@
     {
       "id": 1,
       "title": "Laptop",
-      "description": "MacBook Air",
+      "description": "MacBook Air M2, 13-inch",
       "price": 1200,
-      "image": "url",
+      "image": "https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/23759761/bfarsace_190101_5333_0008.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100&w=750",
       "date": "2025-11-11"
+    },
+    {
+      "id": 2,
+      "title": "Headphones",
+      "description": "Sony WH-1000XM5 Wireless",
+      "price": 399,
+      "image": "https://www.sony.ua/image/623af7b9b246c988fc3f3264a4de278c?fmt=png-alpha&wid=1578&hei=1050&bgcolor=F6F9FF",
+      "date": "2025-11-10"
+    },
+    {
+      "id": 3,
+      "title": "Camera",
+      "description": "Canon EOS R50 Mirrorless",
+      "price": 950,
+      "image": "https://www.photobohemian.com/wp-content/uploads/Canon-R50-title.jpg",
+      "date": "2025-11-09"
+    },
+    {
+      "id": 4,
+      "title": "Backpack",
+      "description": "Stylish leather city backpack",
+      "price": 120,
+      "image": "https://i.etsystatic.com/14236499/r/il/a0f4c4/7167021982/il_1140xN.7167021982_66l3.jpg",
+      "date": "2025-11-08"
+    },
+    {
+      "id": 5,
+      "title": "Smartwatch",
+      "description": "Apple Watch SE 2",
+      "price": 279,
+      "image": "https://cdn.mos.cms.futurecdn.net/yFvwwerXiybr8Af7iU3UvC-1920-80.jpg.webp",
+      "date": "2025-11-07"
+    },
+    {
+      "id": 6,
+      "title": "Sneakers",
+      "description": "Nike Air Force 1",
+      "price": 89,
+      "image": "https://sneakersbanda.ua/images/detailed/2034/Nike-Air-Force-1-Low-SP-AMBUSH-Phantom-Product_0prp-ya.jpg",
+      "date": "2025-11-07"
+    },
+    {
+      "id": "add3",
+      "title": "Candle",
+      "description": "Eucalyptus + Lavender - Signature Candle",
+      "price": 20,
+      "image": "https://www.slownorth.com/cdn/shop/files/Natural_Candle_-_Eucalyptus_Lavender.jpg?v=1744042581&width=1000",
+      "date": "2025-11-12T12:32:48.557Z"
     }
   ]
 }
