@@ -43,8 +43,8 @@ export const Dashboard: React.FC = () => {
       <FilterBar onSort={handleSort} onAdd={() => setShowForm(!showForm)} />
 
       {showForm && (
-        <div className="mb-6">
-          <WishForm />
+        <div className="mb-6 flex justify-center">
+          <WishForm onClose={() => setShowForm(false)} />
         </div>
       )}
 
