@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { API_URL } from "../Constants/Api";
 
 const WishPage = () => {
   const { id } = useParams();
   const [wish, setWish] = useState<any>(null);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/wishes/${id}`)
+    fetch(`${API_URL}/wishes/${id}`)
       .then((res) => res.json())
       .then((data) => setWish(data))
       .catch((err) => console.error("Error loading wish:", err));
