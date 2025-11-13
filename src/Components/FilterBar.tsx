@@ -22,7 +22,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({ onSort, onAdd }) => {
   };
 
   return (
-    <div className="flex flex-wrap gap-3 items-center mb-4">
+    <div className="flex flex-wrap gap-3 items-center mb-4 justify-center md:justify-between">
       <div>
         <label className="mr-2 font-medium">Sort by date:</label>
         <select
@@ -49,7 +49,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({ onSort, onAdd }) => {
 
       <button
         onClick={onAdd}
-        className="bg-blue-500 text-white px-3 py-1 rounded ml-auto hover:bg-opacity-90 hover: transition hover:-translate-y-0.5 duration-150"
+        className="bg-blue-500 text-white px-3 py-1 rounded hover:bg-opacity-90 hover:-translate-y-0.5 duration-150 md:ml-auto"
       >
         + Add New Wish
       </button>

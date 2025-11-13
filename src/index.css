@@ -7,5 +7,6 @@
 }
 
 .cardButton {
-  @apply px-5 py-1 border border-gray-400 rounded text-gray-700 hover:bg-gray-400 hover:text-white transition;
+  @apply min-w-[60px] px-3 py-1 border border-gray-400 rounded text-gray-700 flex-1 lg:min-w-[80px] sm:flex-none text-center 
+  hover:bg-gray-400 hover:text-white transition text-sm;
 }

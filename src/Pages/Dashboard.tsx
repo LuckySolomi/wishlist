@@ -68,7 +68,9 @@ export const Dashboard: React.FC = () => {
 
   return (
     <div className="p-6 max-w-5xl mx-auto">
-      <h1 className="text-2xl font-semibold mb-4">My Wishlist</h1>
+      <h1 className="text-2xl font-semibold mb-4 text-center md:text-start">
+        My Wishlist
+      </h1>
 
       <FilterBar onSort={handleSort} onAdd={() => setShowForm(!showForm)} />
 

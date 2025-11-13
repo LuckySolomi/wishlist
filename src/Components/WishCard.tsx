@@ -24,7 +24,7 @@ export const WishCard: React.FC<WishCardProps> = ({
       <p className="text-gray-600 text-sm mb-2">{wish.description}</p>
       <p className="font-bold mb-3">${wish.price}</p>
 
-      <div className="flex justify-center gap-2 mt-auto">
+      <div className="flex justify-center gap-2  mt-3 w-full">
         <button onClick={onDelete} className="cardButton ">
           Delete
         </button>
