@@ -54,13 +54,13 @@ export const WishForm: React.FC<{ onClose?: () => void }> = ({ onClose }) => {
         name="title"
         placeholder="Title"
         onChange={handleChange}
-        className="w-full p-[5px] border-b border-gray-300 focus:outline-none focus:border-blue-500 transition duration-200"
+        className="input"
       />
       <input
         name="description"
         placeholder="Description"
         onChange={handleChange}
-        className="w-full p-[5px] border-b border-gray-300 focus:outline-none focus:border-blue-500 transition duration-200"
+        className="input"
       />
       <input
         name="price"
@@ -68,13 +68,13 @@ export const WishForm: React.FC<{ onClose?: () => void }> = ({ onClose }) => {
         placeholder="Price"
         min="0"
         onChange={handleChange}
-        className="w-full p-[5px] border-b border-gray-300 focus:outline-none focus:border-blue-500 transition duration-200"
+        className="input"
       />
       <input
         name="image"
         placeholder="Image URL"
         onChange={handleChange}
-        className="w-full p-[5px] border-b border-gray-300 focus:outline-none focus:border-blue-500 transition duration-200"
+        className="input"
       />
 
       {error && <p className="text-red-500 text-sm">{error}</p>}

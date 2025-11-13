@@ -1,39 +1,41 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useWishes } from "../Context/WishContext";
 import type { Wish } from "../Types/Wish";
 
 interface WishCardProps {
   wish: Wish;
+  onDelete: () => void;
+  onUpdate: () => void;
 }
 
-export const WishCard: React.FC<WishCardProps> = ({ wish }) => {
-  const { deleteWish } = useWishes();
-
+export const WishCard: React.FC<WishCardProps> = ({
+  wish,
+  onDelete,
+  onUpdate,
+}) => {
   return (
-    <div className="border rounded-xl shadow-md p-4 flex flex-col">
+    <div className="border rounded-xl shadow-md p-4 flex flex-col hover:shadow-lg">
       <img
         src={wish.image}
         alt={wish.title}
-        className="w-full h-48 object-cover rounded-lg mb-3"
+        className="w-full h-48 object-cover rounded-lg mb-3 hover:scale-105 duration-150"
       />
       <h2 className="text-lg font-semibold">{wish.title}</h2>
       <p className="text-gray-600 text-sm mb-2">{wish.description}</p>
       <p className="font-bold mb-3">${wish.price}</p>
 
-      <div className="flex justify-between">
-        <Link
-          to={`/wish/${wish.id}`}
-          className="text-blue-600 hover:underline text-sm"
-        >
-          View details
-        </Link>
-        <button
-          onClick={() => wish.id && deleteWish(wish.id)}
-          className="text-red-500 text-sm"
-        >
+      <div className="flex justify-center gap-2 mt-auto">
+        <button onClick={onDelete} className="cardButton ">
           Delete
         </button>
+
+        <button onClick={onUpdate} className="cardButton ">
+          Update
+        </button>
+
+        <Link to={`/wish/${wish.id}`} className="cardButton ">
+          Details
+        </Link>
       </div>
     </div>
   );

@@ -49,7 +49,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({ onSort, onAdd }) => {
 
       <button
         onClick={onAdd}
-        className="bg-blue-500 text-white px-3 py-1 rounded ml-auto"
+        className="bg-blue-500 text-white px-3 py-1 rounded ml-auto hover:bg-opacity-90 hover: transition hover:-translate-y-0.5 duration-150"
       >
         + Add New Wish
       </button>
