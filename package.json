@@ -8,8 +8,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "server": "json-server --watch db.json --port 10000",
-    "start": "json-server --watch db.json --port 10000"
+    "server": "npx json-server ./db.json --port 10000 -s ./public",
+    "start": "npx json-server ./db.json --port 10000 -s ./public"
   },
   "dependencies": {
     "react": "^19.2.0",
