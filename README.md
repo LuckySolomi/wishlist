@@ -13,6 +13,7 @@ Users can add, update, view, and delete wishes with a clean UI and smooth intera
 - **Tailwind CSS**
 - **REST API** (CRUD operations)
 - **GitHub Pages, Render.com, Velcel** for deployment
+- The server is not running all the time, but “wakes up” only when someone makes a request again. The first request after “sleeping” can take 30–60 seconds to load (because the server is spinning up)
 
 ---
 
